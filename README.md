@@ -1,0 +1,2 @@
+# js-practics
+Praktika JS

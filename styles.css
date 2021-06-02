@@ -1,0 +1,13 @@
+.button {
+  font-size: 40px;
+  cursor: pointer;
+  border: 1px solid red;
+  border-radius: 7px;
+  transition: background-color 250ms linear;
+}
+
+.button:hover,
+.button:focus {
+  color: tomato;
+  background-color: teal;
+}
