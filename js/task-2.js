@@ -14,3 +14,10 @@ const ingredients = [
 
 // Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, после чего вставит все li за одну операцию в список ul.ingredients. Для создания DOM-узлов используй document.createElement().
 
+const ulEl = document.querySelector('ul');
+
+for (let i = 0; i < ingredients.length; i++) {
+  const liEl = document.createElement('li');
+  liEl.textContent = ingredients[i];
+  ulEl.appendChild(liEl);
+}
