@@ -16,8 +16,12 @@ const ingredients = [
 
 const ulEl = document.querySelector('ul');
 
+const elements = [];
+
 for (let i = 0; i < ingredients.length; i++) {
   const liEl = document.createElement('li');
   liEl.textContent = ingredients[i];
-  ulEl.appendChild(liEl);
+  elements.push(liEl);
 }
+
+ulEl.append(...elements);

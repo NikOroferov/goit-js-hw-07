@@ -22,7 +22,8 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const ulGallery = document.querySelector('#gallery');
+
+const ulGallery = document.getElementById('gallery')
 
 images.forEach(image => {
   ulGallery.insertAdjacentHTML('afterbegin',
