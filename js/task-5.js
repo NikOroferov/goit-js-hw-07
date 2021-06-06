@@ -5,11 +5,12 @@ console.log(inputEl);
 const spanEl = document.getElementById('name-output')
 console.log(spanEl);
 
-inputEl.addEventListener('blur', (event) => {
-    event.preventDefault();
-    if (!inputEl.value) {
-        spanEl.textContent = 'незнакомец';
-    } else {
-        spanEl.textContent = inputEl.value;
-    };    
-});
+inputEl.addEventListener('input', () => { !inputEl.value ?  spanEl.textContent = 'незнакомец' : spanEl.textContent = inputEl.value});
+
+// inputEl.addEventListener('blur', (event) => {
+//     if (!inputEl.value) {
+//         spanEl.textContent = 'незнакомец';
+//     } else {
+//         spanEl.textContent = inputEl.value;
+//     };    
+// });
