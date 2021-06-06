@@ -6,7 +6,6 @@
 const inputEl = document.getElementById('validation-input');
 
 inputEl.addEventListener('blur', (event) => {
-    console.dir(event.currentTarget.className)
     if (inputEl.value.length === Number(inputEl.dataset.length) && !inputEl.getAttribute('class')) {
         inputEl.classList.add("valid");
     } else if (inputEl.value.length === Number(inputEl.dataset.length) && inputEl.classList.contains("valid")) {
@@ -18,3 +17,20 @@ inputEl.addEventListener('blur', (event) => {
         inputEl.classList.add("invalid");
     }
 });
+
+// inputEl.addEventListener('blur', (event) => {
+//     console.log(event.currentTarget);
+//     console.log(inputEl.value.length, Number(inputEl.dataset.length));
+//     if (inputEl.value.length === Number(inputEl.dataset.length)) {
+//         if (!inputEl.getAttribute('class')) {
+//             inputEl.classList.add("valid");            
+//         } else if (inputEl.classList.contains("invalid")) {
+//             inputEl.classList.replace("invalid", "valid");
+//         };
+//     } else {
+//         if (inputEl) {
+            
+//         }
+//         inputEl.classList.replace("valid", "invalid")
+//     }
+// })
