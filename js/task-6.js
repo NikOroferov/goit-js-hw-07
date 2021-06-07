@@ -3,34 +3,20 @@
 // Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
-const inputEl = document.getElementById('validation-input');
 
-inputEl.addEventListener('blur', (event) => {
-    if (inputEl.value.length === Number(inputEl.dataset.length) && !inputEl.getAttribute('class')) {
-        inputEl.classList.add("valid");
-    } else if (inputEl.value.length === Number(inputEl.dataset.length) && inputEl.classList.contains("valid")) {
-    } else if (inputEl.value.length === Number(inputEl.dataset.length) && inputEl.classList.contains("invalid")) {
-        inputEl.classList.replace("invalid", "valid");
-    } else if (inputEl.value.length !== Number(inputEl.dataset.length) && inputEl.classList.contains("valid")){
-        inputEl.classList.replace("valid", "invalid");
-    } else {
-        inputEl.classList.add("invalid");
-    }
+const dataInput = document.querySelector('#validation-input');
+
+dataInput.addEventListener("blur", event => {
+    const inputValue = event.currentTarget.value;
+    console.log(inputValue.length);
+    console.log(dataInput.dataset.length);
+    
+  if (inputValue.length <  dataInput.dataset.length) {
+    event.currentTarget.classList.add("invalid");
+  } 
+
+  else {
+    event.currentTarget.classList.remove("invalid");
+    event.currentTarget.classList.add("valid");
+  };
 });
-
-// inputEl.addEventListener('blur', (event) => {
-//     console.log(event.currentTarget);
-//     console.log(inputEl.value.length, Number(inputEl.dataset.length));
-//     if (inputEl.value.length === Number(inputEl.dataset.length)) {
-//         if (!inputEl.getAttribute('class')) {
-//             inputEl.classList.add("valid");            
-//         } else if (inputEl.classList.contains("invalid")) {
-//             inputEl.classList.replace("invalid", "valid");
-//         };
-//     } else {
-//         if (inputEl) {
-            
-//         }
-//         inputEl.classList.replace("valid", "invalid")
-//     }
-// })
