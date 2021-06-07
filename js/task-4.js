@@ -7,8 +7,8 @@
 const valueEl = document.getElementById('value');
 console.log(valueEl);
 
-const incBtnEl = document.querySelector('#counter button[data-action="increment"]');
-const decBtnEl = document.querySelector('#counter button[data-action="decrement"]')
+const incBtnEl = document.querySelector('[data-action="increment"]');
+const decBtnEl = document.querySelector('[data-action="decrement"]')
 
 let counterValue = 0;
 

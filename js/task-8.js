@@ -15,24 +15,26 @@ const createEl = document.querySelector('#controls button[data-action="render"]'
 const removeEl = document.querySelector('#controls button[data-action="destroy"]');
 
 
+let size = 30;
+
 createEl.addEventListener('click', () => {
     console.log(Number(input.value));
-    for (let i = 1; i <= Number(input.value); i++) {
+    
+    for (let i = 0; i < Number(input.value); i++) {
+        
         const r = Math.floor(Math.random() * (256));
         const g = Math.floor(Math.random() * (256));
         const b = Math.floor(Math.random() * (256));
-        const color = '#' + r.toString(16) + g.toString(16) + b.toString(16); 
-        console.log(r);
-        console.log(g);
-        console.log(b);
-        console.log(color);
+        const color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+
         let divEl = document.createElement('div');
         divEl.style.marginBottom = "10px";
-        divEl.style.height = `${i * 30}px`;
-        divEl.style.width = `${i * 30}px`;
+        divEl.style.height = `${size + 10*i}px`;
+        divEl.style.width = `${size + 10*i}px`;
         divEl.style.backgroundColor = color;
         divEl.style.borderWidth = "2px";
         divEl.style.borderColor = 'tomato';
+
         divEl.classList.add('new');
         container.appendChild(divEl);
     };
