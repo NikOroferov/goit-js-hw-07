@@ -14,13 +14,13 @@ const input = document.querySelector('input');
 const createEl = document.querySelector('#controls button[data-action="render"]');
 const removeEl = document.querySelector('#controls button[data-action="destroy"]');
 
-
 let size = 30;
 
-createEl.addEventListener('click', () => {
-    console.log(Number(input.value));
+function createBoxes(amount) {
+    amount = Number(input.value);
+    console.log(amount);
     
-    for (let i = 0; i < Number(input.value); i++) {
+    for (let i = 0; i < amount; i++) {
         
         const r = Math.floor(Math.random() * (256));
         const g = Math.floor(Math.random() * (256));
@@ -39,9 +39,11 @@ createEl.addEventListener('click', () => {
         container.appendChild(divEl);
     };
     input.value = "";
-})
+};
 
-removeEl.addEventListener('click', (e) => {
+function destroyBoxes() {
     container.innerHTML = "";
-});
+};
 
+createEl.addEventListener('click', createBoxes)
+removeEl.addEventListener('click', destroyBoxes);

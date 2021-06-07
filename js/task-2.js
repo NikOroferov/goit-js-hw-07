@@ -22,6 +22,6 @@ for (let i = 0; i < ingredients.length; i++) {
   const liEl = document.createElement('li');
   liEl.textContent = ingredients[i];
   elements.push(liEl);
-}
+};
 
 ulEl.append(...elements);

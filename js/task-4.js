@@ -20,4 +20,4 @@ incBtnEl.addEventListener('click', () => {
 decBtnEl.addEventListener('click', () => {
     valueEl.textContent = counterValue - 1;
     counterValue--;
-})
+});

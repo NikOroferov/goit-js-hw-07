@@ -27,6 +27,5 @@ const ulGallery = document.getElementById('gallery')
 
 images.forEach(image => {
   ulGallery.insertAdjacentHTML('afterbegin',
-    `<li><img src=${image.url} alt="${image.alt}"></li>`
-  );
+    `<li><img src=${image.url} alt="${image.alt}"></li>`);
 });
