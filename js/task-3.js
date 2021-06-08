@@ -24,8 +24,13 @@ const images = [
 ];
 
 const ulGallery = document.getElementById('gallery')
+const imgList = [];
 
-images.forEach(image => {
-  ulGallery.insertAdjacentHTML('afterbegin',
-    `<li><img src=${image.url} alt="${image.alt}"></li>`);
-});
+  for (let i = 0; i < images.length; i++) {
+    const src = images[i].url;
+    const alt = images[i].alt;
+    const img = `<li><img src="${src}" alt="${alt}" width = "640"></li>`;
+    imgList.push(img);
+}
+
+ulGallery.insertAdjacentHTML('beforeend', imgList.join(''));

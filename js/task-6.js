@@ -5,13 +5,17 @@
 
 const dataInput = document.querySelector('#validation-input');
 
-dataInput.addEventListener("blur", event => {
+
+dataInput.addEventListener("blur", onDataInput);
+
+function onDataInput(event) {
     const inputValue = event.currentTarget.value;
 
-    if (inputValue.length !== Number(dataInput.dataset.length)) {
-        event.currentTarget.classList.add("invalid");
-    } else {
+    if (inputValue.length === Number(dataInput.dataset.length)) {
         event.currentTarget.classList.remove("invalid");
         event.currentTarget.classList.add("valid");
+    } else {
+        event.currentTarget.classList.remove("valid");
+        event.currentTarget.classList.add("invalid");
     };
-});
+};
