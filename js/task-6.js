@@ -9,13 +9,14 @@ const dataInput = document.querySelector('#validation-input');
 dataInput.addEventListener("blur", onDataInput);
 
 function onDataInput(event) {
-    const inputValue = event.currentTarget.value;
+    function updateClass(addClass, remClass) {
+        event.currentTarget.classList.remove(remClass);
+        event.currentTarget.classList.add(addClass);
+    };
 
-    if (inputValue.length === Number(dataInput.dataset.length)) {
-        event.currentTarget.classList.remove("invalid");
-        event.currentTarget.classList.add("valid");
+    if (event.currentTarget.value.length === Number(dataInput.dataset.length)) {
+        updateClass("valid", "invalid");
     } else {
-        event.currentTarget.classList.remove("valid");
-        event.currentTarget.classList.add("invalid");
+        updateClass("invalid", "valid");
     };
 };
